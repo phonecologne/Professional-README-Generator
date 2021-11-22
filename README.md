@@ -13,3 +13,5 @@ YouTube Link:
 
 # GitHub Hosted Site
 hosted on GitHub at: https://phonecologne.github.io/Professional-README-Generator/
+
+<em>special thanks to Javier Perez for his online tutorial for getting me started and explaining JSON.package
