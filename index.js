@@ -109,8 +109,18 @@ const questions = [
                 name: 'Tests',
                 checked: false
             },
-            
+            {
+                name: 'Questions',
+                checked: true
+            },
+            {
+                name: 'Credits',
+                checked: true
+            },
         ]
+    },
+    {
+        
     }
 ];
 
