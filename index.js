@@ -89,11 +89,27 @@ const questions = [
                 name: 'Installation',
                 checked: false
             },
-{
-    name: 'Screenshots',
-    checked: true
-},
-
+            {
+                name: 'Screenshots',
+                checked: true
+            },
+            {
+                name: 'Built With',
+                checked: true
+            },
+            {
+                name: 'License',
+                checked: false
+            },
+            {
+                name: 'Contributing',
+                checked: false
+            },
+            {
+                name: 'Tests',
+                checked: false
+            },
+            
         ]
     }
 ];
