@@ -48,6 +48,35 @@ const questions = [
             }
         }
     },
+    {
+        //This is the meat and potatoes of your README. There shouldn't be a word count limit stopping people from written something that will be lost at +50 characters
+        type: 'input',
+        name: 'description',
+        message: '(Required!) Lets write a short description of your project',
+        validate: descInput => {
+            if (descInput) {
+                return true;
+            } else {
+                console.log('Only a short sentence describing your project is needed! Without one you could lose track of your projects!')
+                return false;
+            }
+        }
+    },
+    {
+        //This section will allow users to add directions or specifics intrsutions on how to use this project
+        type: 'input',
+        name: 'useage',
+        message: '(Required!) Lets add some infomation on how a user will be using your project',
+        validate: useageInput => {
+            if (useageInput) {
+                return true;
+            } else {
+                console.log('Its important to add some addtional information for users to know how to use your project for themselves. You can edit this later if your project changes');
+                return false;
+            }
+        }
+    },
+    
 ];
 
 // TODO: Create a function to write README file
