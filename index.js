@@ -130,7 +130,38 @@ const questions = [
                 return false;
             }
         },
-        
+        validate: linkInput => {
+            if (linkInput) {
+                return true;
+            } else {
+                console.log('Ahh! You forgot to enter a link! If its not a GitHub link thats OK too!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'installation',
+        message: 'Please list all your packages you used',
+                when: ({ contents }) => {
+            if (contents.indexOf('Installation') > -1) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        validate: installInput => {
+            if (installInput) {
+                return true;
+            } else {
+                console.log('Please enter installation instructions!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'list',
+
     }
 ];
 
