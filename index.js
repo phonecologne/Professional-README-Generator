@@ -161,7 +161,44 @@ const questions = [
     },
     {
         type: 'list',
-
+        name: 'license',
+        message: 'Please check the lisenses you used for your project',
+        choices: ['MIT', 'GNU', 'Apache 2.0', 'ISC'],
+        default: 0,
+        when: ({ contents }) => {
+            if (contents.indexOf('License' > -1)) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        validate: licenseInput => {
+            if (licenseInput) {
+                return true;
+            } else {
+                console.log('Dont forget to give credit to the licenses you used for your project! Its the right thing to do!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'checkbox',
+        name: 'built with',
+        message: 'Please check the elements that use have applied to your project',
+        choices: ['HTML', 'CSS', 'SASS', 'JavaScript', 'NODE.JS', 'Express.JS'],
+        default: 0,
+        when: ({ contents }) => {
+            if (contents.indexOf('Built With') > -1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'contributing',
+        
     }
 ];
 
