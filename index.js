@@ -120,6 +120,16 @@ const questions = [
         ]
     },
     {
+        type: 'input',
+        name: 'link',
+        message: 'Lets enter the link for where you hosted your project. For example, GitHub can host your project if you enabled GitHub to your repository.',
+        when: ({ contents }) => {
+            if (contents.indexOf('Deployed Application') > -1) {
+                return true;
+            } else {
+                return false;
+            }
+        },
         
     }
 ];
