@@ -198,8 +198,24 @@ const questions = [
     {
         type: 'input',
         name: 'contributing',
-        
-    }
+        message: 'If someone would like to contribute to your project, do you have any guidelines you would like them to follow?',
+        when: ({ contents }) => {
+            if (contents.indexOf('Contributing') > -1) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        validate: contributingInput => {
+            if (contributingInput) {
+                return true;
+            } else {
+                console.log('It is important to set some guidelines for people who want to contribute. Otherwise your hard work can be lost or stolen but others who have honest or innocent intentions');
+                return false;
+            }
+        }
+    },
+    
 ];
 
 // TODO: Create a function to write README file
