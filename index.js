@@ -76,6 +76,7 @@ const questions = [
         }
     },
     {
+        //This is where I would expect people to link their GitHub hosted site
         type: 'input',
         name: 'link',
         message: 'Lets enter the link for where you hosted your project. For example, GitHub can host your project if you enabled GitHub to your repository.',
@@ -96,6 +97,7 @@ const questions = [
         }
     },
     {
+        //Have you used NODE packages? Lets give people credit!
         type: 'input',
         name: 'installation',
         message: 'Please list all your packages you used',
@@ -116,6 +118,7 @@ const questions = [
         }
     },
     {
+        //Giving credit to the people who helped you complete your project on your README
         type: 'list',
         name: 'license',
         message: 'Please check the lisenses you used for your project',
@@ -138,6 +141,7 @@ const questions = [
         }
     },
     {
+        //what other elements are on your project?
         type: 'checkbox',
         name: 'built with',
         message: 'Please check the elements that use have applied to your project',
@@ -152,6 +156,7 @@ const questions = [
         }
     },
     {
+        //settling up some ground rules if people would like to contribute to your project
         type: 'input',
         name: 'contributing',
         message: 'If someone would like to contribute to your project, do you have any guidelines you would like them to follow?',
@@ -172,26 +177,7 @@ const questions = [
         }
     },
     {
-        type: 'input',
-        name: 'test',
-        message: 'Now please enter any applicable test information for your project',
-        when: ({ contents }) => {
-            if (contents.indexOf('Tests') > -1) {
-                return true;
-            } else {
-                return false;
-            }
-        },
-        validate: testsInput => {
-            if (testsInput) {
-                return true;
-            } else {
-                console.log('You need to let users know what tests you require them to install before they pull your work by having this information on your README');
-                return false;
-            }
-        }
-    },
-    {
+        //adding your email is important so people can give you credit or ask you questions
         type: 'input',
         name: 'questions',
         message: 'Lets include your email address so contributors can reach out to you directly if they have any questions',
