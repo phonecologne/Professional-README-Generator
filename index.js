@@ -39,7 +39,7 @@ const questions = [
         //After Linking your GitHub profile we are now going to link to the user repository for the project. 
         type: 'input',
         name: 'repo',
-        message: '(Required!) Please enter the name of your GitHub Repository.'
+        message: '(Required!) Please enter the name of your GitHub Repository.',
         validate: repoInput => {
             if (repoInput) {
                 return true;
@@ -143,7 +143,7 @@ const questions = [
         type: 'input',
         name: 'installation',
         message: 'Please list all your packages you used',
-                when: ({ contents }) => {
+        when: ({ contents }) => {
             if (contents.indexOf('Installation') > -1) {
                 return true;
             } else {
@@ -240,7 +240,7 @@ const questions = [
         name: 'questions',
         message: 'Lets include your email address so contributors can reach out to you directly if they have any questions',
         when: ({ contents }) => {
-            if (contents.indexOf ('Questions') > -1) {
+            if (contents.indexOf('Questions') > -1) {
                 return true;
             } else {
                 return false;
@@ -271,15 +271,15 @@ function init() {
 };
 // Function call to initialize app
 init()
-.then(userResponse => {
-    if (Response.contents.indexOf('Credits') > -1) {
-        return addCredits(Response);
-    } else {
-        return response;
-    }
-})
-.then(answers => generateMarkdown(answers))
-.then(generatedReadme => writeToFile('README.md', generatedReadme)
-.cath(err => {
-    console.log(err);
-});
+    .then(userResponse => {
+        if (Response.contents.indexOf('Credits') > -1) {
+            return addCredits(Response);
+        } else {
+            return response;
+        }
+    })
+    .then(answers => generateMarkdown(answers))
+    .then(generatedReadme => writeToFile('README.md', generatedReadme))
+        .cath(err => {
+            console.log(err);
+        });
