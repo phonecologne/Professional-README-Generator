@@ -4,9 +4,9 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 // TODO: Create a list of questions for user input
+        //Naming your Project. Includes the first question and the return question if the user trys to skips this question. I want to include text that lets the user know why answering this question is important
 const questions = [
     {
-        //Naming your Project. Includes the first question and the return question if the user trys to skips this question. I want to include text that lets the user know why answering this question is important
         type: 'input',
         name: 'title',
         //I wanted to ask What is your project's name, BUT the second apostropehe was breaking the code
