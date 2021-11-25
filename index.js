@@ -215,14 +215,71 @@ const questions = [
             }
         }
     },
-    
+    {
+        type: 'input',
+        name: 'test',
+        message: 'Now please enter any applicable test information for your project',
+        when: ({ contents }) => {
+            if (contents.indexOf('Tests') > -1) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        validate: testsInput => {
+            if (testsInput) {
+                return true;
+            } else {
+                console.log('You need to let users know what tests you require them to install before they pull your work by having this information on your README');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'questions',
+        message: 'Lets include your email address so contributors can reach out to you directly if they have any questions',
+        when: ({ contents }) => {
+            if (contents.indexOf ('Questions') > -1) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        validate: questionsInput => {
+            if (questionsInput) {
+                return true;
+            } else {
+                console.log('You want people to reach out to your email address to ask questions or even give you a small thank you!');
+                return false;
+            }
+        }
+    }
 ];
-
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
-
+function writeToFile(fileName, data) {
+    fs.writeFile(`./dist/${fileName}`, data, err => {
+        if (err) {
+            throw err
+        };
+        console.log('README generated for you!')
+    });
+};
 // TODO: Create a function to initialize app
-function init() { }
-
+function init() {
+    return inquirer.prompt(questions);
+};
 // Function call to initialize app
-init();
+init()
+.then(userResponse => {
+    if (Response.contents.indexOf('Credits') > -1) {
+        return addCredits(Response);
+    } else {
+        return response;
+    }
+})
+.then(answers => generateMarkdown(answers))
+.then(generatedReadme => writeToFile('README.md', generatedReadme)
+.cath(err => {
+    console.log(err);
+});
