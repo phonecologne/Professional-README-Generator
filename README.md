@@ -10,6 +10,7 @@ SO THAT I can quickly create a professional README for a new project just by ans
 YouTube Link:
 
 # Screenshot of the final project
+![Screenshot 2021-11-24 172015](https://user-images.githubusercontent.com/88611613/143335980-a125ae85-1afb-4dda-a817-87cbd3179eff.jpg)
 
 # GitHub Hosted Site
 hosted on GitHub at: https://phonecologne.github.io/Professional-README-Generator/
