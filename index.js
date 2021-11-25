@@ -76,49 +76,6 @@ const questions = [
         }
     },
     {
-        type: 'checkbox',
-        name: 'contents',
-        message: 'Lets add some addtional information to your README by using the following checklist of what should be included to your README description',
-        choices: [
-            {
-                name: 'Deployed Application',
-                checked: false
-            },
-            {
-                name: 'Installation',
-                checked: false
-            },
-            {
-                name: 'Screenshots',
-                checked: true
-            },
-            {
-                name: 'Built With',
-                checked: true
-            },
-            {
-                name: 'License',
-                checked: false
-            },
-            {
-                name: 'Contributing',
-                checked: false
-            },
-            {
-                name: 'Tests',
-                checked: false
-            },
-            {
-                name: 'Questions',
-                checked: true
-            },
-            {
-                name: 'Credits',
-                checked: true
-            },
-        ]
-    },
-    {
         type: 'input',
         name: 'link',
         message: 'Lets enter the link for where you hosted your project. For example, GitHub can host your project if you enabled GitHub to your repository.',
